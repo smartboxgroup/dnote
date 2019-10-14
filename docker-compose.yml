@@ -1,0 +1,29 @@
+version: '3.2'
+services:
+  frontend:
+    build: ./frontend
+    image: deadlynote:frontend
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./frontend:/usr/src/frontend
+      - /usr/src/frontend/node_modules
+    command: npm run serve
+
+  backend:
+    build: ./backend
+    image: deadlynote:backend
+    depends_on:
+    - redis
+    volumes:
+    - ./backend:/usr/src/api
+    - /usr/src/backend/node_modules
+    command: node index.js
+
+  redis:
+    image: redis:4-alpine
+
+networks:
+  default:
+    external:
+      name: deadlynote_proxy

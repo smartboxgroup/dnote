@@ -1,0 +1,19 @@
+{
+  "name": "deadlynote-backend",
+  "version": "1.0.0",
+  "description": "DeadlyNote API",
+  "main": "index.js",
+  "dependencies": {
+    "md5": "^2.2.1",
+    "redis": "^2.8.0",
+    "restify": "^8.4.0",
+    "restify-errors": "^6.1.1",
+    "restify-plugins": "^1.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  },
+  "license": "MIT"
+}

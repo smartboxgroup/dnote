@@ -1,0 +1,36 @@
+image: node:12
+
+stages:
+  - installation
+  - lint
+
+frontend-installation:
+  stage: installation
+  artifacts:
+    paths:
+      - frontend/node_modules
+  script:
+    - cd frontend
+    - npm install
+
+frontend-lint:
+  stage: lint
+  script:
+    - cd frontend
+    - ./node_modules/.bin/eslint ./
+
+backend-installation:
+  stage: installation
+  artifacts:
+    paths:
+      - backend/node_modules
+  script:
+    - cd backend
+    - npm install
+
+backend-lint:
+  stage: lint
+  allow_failure: true
+  script:
+    - cd backend
+    - ./node_modules/.bin/eslint ./

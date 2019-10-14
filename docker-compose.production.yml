@@ -1,0 +1,27 @@
+version: '3.2'
+services:
+  frontend:
+    command: npm run build
+    volumes:
+      - type: volume
+        source: frontend
+        target: /usr/src/frontend
+
+  webserver:
+    image: nginx:1-alpine
+    depends_on:
+      - frontend
+    volumes:
+      - type: bind
+        source: ./docker/nginx/vhost.conf
+        target: /etc/nginx/conf.d/default.conf
+        read_only: true
+      - type: volume
+#        source: ./frontend/dist/
+        source: frontend
+        target: /var/www/dnote/
+    ports:
+      - "4201:80"
+
+volumes:
+  frontend:
