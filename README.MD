@@ -7,22 +7,13 @@ Deadly Note is a simple Javascript application that allows users to send and sha
 
 ### Installation
 
-First install dependencies for both services:
-
-```
-$ cd backend
-$ npm install
-$ cd ../frontend
-$ npm install
-```
-
-Then create a custom network:
+First create a custom network:
 
 ```
 $ docker network create deadlynote_proxy
 ```
 
-Finally **start the containers** and then open http://localhost:4201/
+Then **start the containers** and open http://localhost:4201/
 
 ```
 $ docker-compose -f docker-compose.yml -f docker-compose.production.yml up
