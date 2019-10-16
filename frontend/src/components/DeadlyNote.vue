@@ -23,7 +23,7 @@
                                             v-model="message"
                                             :rules="[v => !!v || 'Note text is required']"
                                             auto-grow
-                                            box
+                                            filled
                                             color="deep-purple"
                                             :label="noteLabel"
                                             rows="5"

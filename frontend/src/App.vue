@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import DeadlyNote from './components/DeadlyNote'
+import DeadlyNote from './components/DeadlyNote';
 
 export default {
   name: 'App',
@@ -29,5 +29,5 @@ export default {
       title: 'Deadly Note'
     }
   }
-}
+};
 </script>

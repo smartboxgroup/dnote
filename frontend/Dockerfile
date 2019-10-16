@@ -2,7 +2,7 @@ FROM node:8-alpine
 
 ENV DIR=/usr/src/frontend
 
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 RUN npm i && \
     mkdir -p $DIR && \
