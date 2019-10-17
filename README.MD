@@ -7,26 +7,36 @@ Deadly Note is a simple Javascript application that allows users to send and sha
 
 ### Installation
 
-First create a custom network:
+#### DEV
+
+
+Start the containers
 
 ```
-$ docker network create deadlynote_proxy
+$ make dev
+```
+- Then access **http://localhost:4200/**
+
+Clean the containers
+
+```
+$ make clean-dev
 ```
 
-Then **start the containers** and open http://localhost:4201/
-
-```
-$ docker-compose -f docker-compose.yml -f docker-compose.production.yml up
-```
+#### PROD
 
 This will start the application in production mode. You might want to tweak the `vhost` file in `./docker/nginx/vhost.conf` to suit your needs.
 
-If you want to start the application in development mode, just run the following command and open http://localhost:4201/
+```
+$ make prod
+```
+- Then access **http://localhost:4200/**
+
+Clean the containers
 
 ```
-$ docker-compose up
+$ make clean-prod
 ```
-
 ### Usage
 
 Type your note in the textbox and then click "Generate". The text will be replace **with a link to the note**.

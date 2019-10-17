@@ -1,13 +1,9 @@
-FROM node:8-alpine
+FROM node:12-alpine
 
-ENV DIR=/usr/src/frontend
+WORKDIR /usr/src/frontend
 
 COPY package.json ./
 
-RUN npm i && \
-    mkdir -p $DIR && \
-    cp -R ./node_modules .$DIR
+RUN npm i
 
-WORKDIR $DIR
-
-COPY . $DIR
+COPY . .
