@@ -30,7 +30,7 @@ This will start the application in production mode. You might want to tweak the 
 ```
 $ make prod
 ```
-- Then access **http://localhost:4200/**
+- Then access **http://localhost:4201/**
 
 Clean the containers
 
